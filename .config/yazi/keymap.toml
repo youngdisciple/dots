@@ -1,0 +1,20 @@
+[mgr]
+prepend_keymap = [
+{ 
+        on = ["g", "s"], 
+        run = "cd ~/School/s4", 
+        desc = "Go to Semester 4"
+    }
+]
+append_keymap = [
+{
+        on = ["A"],
+        run = '''
+        shell 'read -p "New article name: " name; \
+        name=${name:-article.tex}; \
+        cp -i ~/.blueprints/article.tex "$name"'
+        ''',
+        desc = "Create New Article"
+    }
+]
+

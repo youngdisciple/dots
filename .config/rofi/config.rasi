@@ -1,0 +1,15 @@
+configuration {
+    modes: "drun,recursivebrowser,run";
+    terminal: "kitty";
+
+    run {
+        run-command: "{terminal} {cmd}";
+    }
+    recursivebrowser {
+        dir: "~/";
+        filter-parent: true;
+        command: "setsid xdg-open";
+    }
+}
+
+@theme "/usr/share/rofi/themes/material.rasi"

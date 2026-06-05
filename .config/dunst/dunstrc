@@ -1,0 +1,8 @@
+[global]
+font = JetBrains Mono 10
+frame_width = 2
+corner_radius = 8
+width = 300
+offset = (10, 50)
+background = "#1e1e2e"
+foreground = "#cdd6f4"

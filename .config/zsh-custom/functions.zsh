@@ -1,0 +1,1 @@
+/home/yd/.oh-my-zsh/custom/functions.zsh

@@ -1,0 +1,17 @@
+# copy selected to clipboard
+
+set selection-clipboard clipboard
+
+#mapping
+
+map b feedkeys ":bmark<Tab>"
+map B feedkeys ":blist"
+
+#color
+
+set recolor-lightcolor "rgba(30, 30, 46, 1)"      # dark blue-grey (Catppuccin)
+set recolor-darkcolor  "rgba(220, 230, 255, 1)"    # bright blue-tinted white
+map i recolor
+set recolor true
+set adjust-open "best"
+set guioptions none

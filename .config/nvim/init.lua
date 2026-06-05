@@ -1,0 +1,6 @@
+require "config.lazy"
+require "config.settings"
+require "config.keymaps"
+require "config.lsp"
+require "config.autocmds"
+require "config.luasnip"
