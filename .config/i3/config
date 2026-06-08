@@ -63,6 +63,7 @@ assign [class="kitty"] $ws2
 
 # Workspace 4
 assign [class="discord"] $ws4
+assign [class="sober"] $ws4
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
@@ -147,7 +148,7 @@ client.background       #2e3440
 exec_always --no-startup-id pgrep -f '^kitty --class scratch_term,scratch_term' || kitty --class scratch_term,scratch_term
 
 for_window [class="scratch_term"]    floating enable, resize set 60 ppt 70 ppt, move position 384 162, move scratchpad
-for_window [class="mpv"]             floating enable, resize set 640 360, move position 1270 10, move scratchpad
+# for_window [class="mpv"]             floating enable, resize set 640 360, move position 1270 10
 
 bindsym $mod+u [class="scratch_term"]    scratchpad show
 bindsym $mod+i [class="mpv"]         scratchpad show
