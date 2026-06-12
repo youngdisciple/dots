@@ -133,10 +133,7 @@ bindsym $mod+p exec "passmenu"
 bindsym ctrl+Shift+s exec "flameshot gui"
 
 # mpv-clip
-bindsym $mod+Shift+i exec "/home/yd/.local/bin/mpv-clip"
-
-# scratch-nvim
-bindsym $mod+Shift+o exec "kitty --class scratch_nvim nvim"
+bindsym $mod+Shift+o exec "/home/yd/.local/bin/mpv-clip"
 
 # gaps
 gaps inner 10px
@@ -152,14 +149,14 @@ client.background       #2e3440
 
 # scratchpads
 exec_always --no-startup-id pgrep -f '^kitty --class scratch_term,scratch_term' || kitty --class scratch_term,scratch_term
-exec_always --no-startup-id pgrep -f '^kitty --class scratch_nvim' || kitty --class scratch_nvim nvim
+exec_always --no-startup-id pgrep -f '^kitty --class scratch_nvim' || (mkdir -p ~/tmp && kitty --class scratch_nvim nvim ~/tmp/scratch.md)
 
 for_window [class="scratch_term"]    floating enable, resize set 60 ppt 70 ppt, move position 384 162, move scratchpad
-for_window [class="scratch_nvim"] floating enable, resize set 70 ppt 80 ppt, move position 288 108, move scratchpad
+for_window [class="scratch_nvim"] floating enable, resize set 90 ppt 90 ppt, move position 96 54, move scratchpad
 
 bindsym $mod+u [class="scratch_term"]    scratchpad show
-bindsym $mod+i [class="mpv"]         scratchpad show
-bindsym $mod+o [class="scratch_nvim"] scratchpad show
+bindsym $mod+i [class="scratch_nvim"] scratchpad show
+bindsym $mod+o [class="mpv"]         scratchpad show
 
 # Sound System
 exec pactl set-default-sink bluez_output.07_11_34_00_B9_D6.1
