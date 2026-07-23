@@ -1,5 +1,6 @@
 return {
     "lopi-py/luau-lsp.nvim",
+    ft = {'luau'},
     opts = {
         platform = {
             type = "roblox",

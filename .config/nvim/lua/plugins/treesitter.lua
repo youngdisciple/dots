@@ -4,8 +4,8 @@ return {
     branch = "main",
     build = ":TSUpdate",
     config = function()
-        local parsers = { 'lua', 'php', 'java', 'dart', 'bash' };
-        local filetypes = { 'lua', 'php', 'java', 'dart', 'sh' };
+        local parsers = { 'lua', 'luau', 'php', 'java', 'dart', 'bash' };
+        local filetypes = { 'lua', 'luau', 'php', 'java', 'dart', 'sh' };
         require('nvim-treesitter').setup {}
         require('nvim-treesitter').install(parsers)
         vim.api.nvim_create_autocmd('FileType', {

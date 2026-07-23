@@ -30,7 +30,8 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
-vim.opt.clipboard = "unnamedplus"
+-- To cross between nvim and OS clipboards
+-- vim.opt.clipboard = "unnamedplus"
 
 vim.opt.foldlevel = 99
 

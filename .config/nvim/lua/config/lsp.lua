@@ -11,20 +11,26 @@ vim.lsp.config("*", {
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {
-callback = function(args)
-    local opts = { buffer = args.buf }
-    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-    vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
-    vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
-    vim.keymap.set("n", "gK", vim.lsp.buf.signature_help, opts)
-end,
+    callback = function(args)
+        local opts = { buffer = args.buf }
+        vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+        vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
+        vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
+        vim.keymap.set("n", "gK", vim.lsp.buf.signature_help, opts)
+    end,
 })
 
 -- lua
 vim.lsp.config.lua_ls = {
     cmd = { "lua-language-server" },
     filetypes = { "lua" },
-    globals = { "vim" }
+    globals = { "vim" },
+    capabilities = {
+        offsetEncoding = {"utf-8"},
+        general = {
+            positionEncodings = {"utf-8"}
+        }
+    },
 }
 
 -- php
