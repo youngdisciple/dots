@@ -1,4 +1,10 @@
-.cache/
-.local/share/
-.local/state/
-node_modules/
+/*
+!/.config/
+/.config/*
+!/.config/i3/
+!/.config/i3blocks/
+!/.config/kitty/
+!/.config/nvim/
+!/.config/zathura/
+!/.gitignore
+!/.tmux.conf
