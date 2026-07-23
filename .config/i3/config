@@ -1,11 +1,12 @@
 set $mod Mod4
 font pango:System San Francisco Display 12 
 
+floating_modifier $mod
+
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -i ~/Pictures/bg01-lock.png --nofork
 exec --no-startup-id nm-applet
 
-floating_modifier $mod
 
 bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
@@ -27,7 +28,6 @@ bindsym $mod+Shift+h move left
 
 bindsym $mod+f fullscreen toggle
 
-bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -61,13 +61,18 @@ assign [class="firefox"] $ws1
 # Workspace 2
 assign [class="kitty"] $ws2
 
+# Workspace 3
+assign [class="robloxstudiobeta.exe"] $ws3
+
 # Workspace 4
 assign [class="discord"] $ws4
 assign [class="sober"] $ws4
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3 exit"
+
+# exit i3
+bindsym $mod+Shift+Delete exec "i3 exit"
 
 bindsym $mod+r mode "resize"
 mode "resize" {
@@ -117,9 +122,6 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id sh -c "pactl set-sink-volume 0
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 5%+
 
-# Display to main screen
-bindsym $mod+Shift+d exec "xrandr --output eDP-1 --off --output HDMI-1 --auto"
-
 # rofi
 bindsym $mod+d exec "rofi -show drun"
 
@@ -129,8 +131,8 @@ bindsym $mod+period exec "rofi -modi emoji -show emoji"
 # passmenu
 bindsym $mod+p exec "passmenu"
 
-# flameshot
-bindsym ctrl+Shift+s exec "flameshot gui"
+# screenshot
+bindsym $mod+s exec "~/.local/bin/screenshot"
 
 # mpv-clip
 bindsym $mod+Shift+o exec "/home/yd/.local/bin/mpv-clip"
@@ -139,7 +141,8 @@ bindsym $mod+Shift+o exec "/home/yd/.local/bin/mpv-clip"
 gaps inner 10px
 
 # window decoration
-for_window [class=".*"] border pixel 2
+for_window [class=".*"] border pixel 1
+
 #border #bg     #text   
 client.focused          #88c0d0 #88c0d0 #2e3440 #88c0d0 #8895D0
 client.focused_inactive #4c566a #3b4252 #d8dee9 #3b4252 #3b4252
@@ -149,7 +152,7 @@ client.background       #2e3440
 
 # scratchpads
 exec_always --no-startup-id pgrep -f '^kitty --class scratch_term,scratch_term' || kitty --class scratch_term,scratch_term
-exec_always --no-startup-id pgrep -f '^kitty --class scratch_nvim' || (mkdir -p ~/tmp && kitty --class scratch_nvim nvim ~/tmp/scratch.md)
+exec_always --no-startup-id pgrep -f '^kitty --class scratch_nvim' || (mkdir -p ~/tmp && kitty --class scratch_nvim nvim ~/tmp/scratchpad/scratch.md)
 
 for_window [class="scratch_term"]    floating enable, resize set 60 ppt 70 ppt, move position 384 162, move scratchpad
 for_window [class="scratch_nvim"] floating enable, resize set 90 ppt 90 ppt, move position 96 54, move scratchpad
@@ -158,6 +161,10 @@ bindsym $mod+u [class="scratch_term"]    scratchpad show
 bindsym $mod+i [class="scratch_nvim"] scratchpad show
 bindsym $mod+o [class="mpv"]         scratchpad show
 
+
 # Sound System
 exec pactl set-default-sink bluez_output.07_11_34_00_B9_D6.1
 exec pactl set-default-source alsa_input.usb-Blue_Microphones_Yeti_Stereo_Microphone-00.analog-stereo
+
+# Roblox Studio
+for_window [class="robloxstudiobeta.exe"] floating enable, resize set 1900 1030, move position 10 10
