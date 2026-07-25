@@ -167,4 +167,4 @@ exec pactl set-default-sink bluez_output.07_11_34_00_B9_D6.1
 exec pactl set-default-source alsa_input.usb-Blue_Microphones_Yeti_Stereo_Microphone-00.analog-stereo
 
 # Roblox Studio
-for_window [class="robloxstudiobeta.exe"] floating enable, resize set 1900 1030, move position 10 10
+for_window [class="robloxstudiobeta.exe"] floating enable, resize set 99 ppt 96 ppt, move position 10 10
