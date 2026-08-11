@@ -268,5 +268,4 @@ include /etc/sway/config.d/*
 
 # BUG: find fix for scratchpad initial behaviour 
 # TODO: set cursor settings via gsettings instead of seat
-# TODO: add battery indicator in waybay
 # TODO: lock

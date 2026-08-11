@@ -10,3 +10,4 @@
 !/.gitignore
 !/.tmux.conf
 !/.config/sway/
+!/.config/waybar

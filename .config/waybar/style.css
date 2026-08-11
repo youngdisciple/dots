@@ -1,0 +1,41 @@
+* {
+  font-family: JetBrainsMono NFM;
+  font-weight: 700;
+  font-size: 12pt;
+  color: white;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  text-shadow: none;
+  transition-duration: 0s;
+}
+
+window#waybar {
+  background: #1b182c;
+  opacity: 0.85;
+}
+
+#window,
+#memory,
+#disk,
+#pulseaudio,
+#custom-weather,
+#cpu,
+#battery {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+#custom-weather {
+  padding-left: 2rem;
+  font-weight: bold;
+}
+
+#workspaces button {
+  background: transparent;
+}
+
+#workspaces button.focused {
+  background: #4186a9;
+  border-radius: 1rem;
+}
