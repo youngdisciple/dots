@@ -39,3 +39,15 @@ window#waybar {
   background: #4186a9;
   border-radius: 1rem;
 }
+
+#battery.charging {
+    color: #468caf;
+}
+
+#battery.discharging {
+    color: #ffffff;
+}
+
+#battery.critical {
+    color: #a94341
+}
