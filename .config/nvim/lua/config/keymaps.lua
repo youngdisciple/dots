@@ -45,9 +45,16 @@ map("n", "<leader>X", function()
     vim.cmd("buffer " .. current)
 end, opt("Close all but current tab"))
 
----- TELESCOPE -------------------------------------------------------------
+---- TELESCOPE --------------------------------------------------------------
 map("n", "<leader>f", "<cmd>Telescope find_files<cr>", opt("Find Files"))
 map("n", "<leader>g", "<cmd>Telescope live_grep<cr>", opt("Live Grep"))
 map("n", "<leader>r", "<cmd>Telescope oldfiles<CR>", opt("Recent Files"))
 map("n", "<leader>b", "<cmd>Telescope buffers<cr>", opt("Buffer Files"))
 map("n", "<leader>h", "<cmd>Telescope help_tags<cr>", opt("Telescope Grep Help"))
+
+---- TERMINAL ---------------------------------------------------------------
+map({"n", "t"}, "<C-t>", function() Floatty.toggle() end, opt("Toggle Terminal"))
+
+
+---- COMMANDS ---------------------------------------------------------------
+map("n", "<leader>;", "<cmd>Telescope command_history<CR>", opt("Command history"))
