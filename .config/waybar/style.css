@@ -1,3 +1,5 @@
+@import "/home/yd/.cache/hellwal/colors-waybar.css";
+
 * {
   font-family: JetBrainsMono NFM;
   font-weight: 700;
@@ -11,7 +13,7 @@
 }
 
 window#waybar {
-  background: #1b182c;
+  background: @background;
   opacity: 0.85;
 }
 
@@ -36,12 +38,12 @@ window#waybar {
 }
 
 #workspaces button.focused {
-  background: #4186a9;
+  background: @color8;
   border-radius: 1rem;
 }
 
 #battery.charging {
-    color: #468caf;
+    color: @color2;
 }
 
 #battery.discharging {
@@ -49,5 +51,5 @@ window#waybar {
 }
 
 #battery.critical {
-    color: #a94341
+    color: #ad7166;
 }
