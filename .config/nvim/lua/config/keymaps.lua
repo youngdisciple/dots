@@ -48,7 +48,8 @@ end, opt("Close all but current tab"))
 ---- TELESCOPE --------------------------------------------------------------
 map("n", "<leader>f", "<cmd>Telescope find_files<cr>", opt("Find Files"))
 map("n", "<leader>g", "<cmd>Telescope live_grep<cr>", opt("Live Grep"))
-map("n", "<leader>r", "<cmd>Telescope oldfiles<CR>", opt("Recent Files"))
+map("n", "<leader>r", "<cmd>Telescope oldfiles<cr>", opt("Recent Files"))
+map("n", "<leader>d", "<cmd>Telescope projects<cr>", opt("List Directories (Projects)"))
 map("n", "<leader>b", "<cmd>Telescope buffers<cr>", opt("Buffer Files"))
 map("n", "<leader>h", "<cmd>Telescope help_tags<cr>", opt("Telescope Grep Help"))
 
@@ -57,4 +58,7 @@ map({"n", "t"}, "<C-t>", function() Floatty.toggle() end, opt("Toggle Terminal")
 
 
 ---- COMMANDS ---------------------------------------------------------------
-map("n", "<leader>;", "<cmd>Telescope command_history<CR>", opt("Command history"))
+map("n", "<leader>;", "<cmd>Telescope command_history<cr>", opt("Command history"))
+
+---- CENTERPAD ---------------------------------------------------------------
+map("n", "<leader>z", "<cmd>lua require'centerpad'.toggle { leftpad = 20, rightpad = 20 }<cr>")
