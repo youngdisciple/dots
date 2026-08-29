@@ -1,10 +1,9 @@
 @import "/home/yd/.cache/hellwal/colors-waybar.css";
 
 * {
-  font-family: JetBrainsMono NFM;
-  font-weight: 700;
+  font-family: Libertinus Serif SemiBold;
   font-size: 12pt;
-  color: white;
+  color: @foreground;
   border: none;
   border-radius: 0;
   box-shadow: none;
@@ -43,13 +42,13 @@ window#waybar {
 }
 
 #battery.charging {
-    color: @color2;
+    color: @color4;
 }
 
 #battery.discharging {
-    color: #ffffff;
+    color: @foreground;
 }
 
 #battery.critical {
-    color: #ad7166;
+    color: @color6;
 }
