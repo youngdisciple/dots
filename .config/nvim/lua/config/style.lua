@@ -1,5 +1,5 @@
-vim.o.winborder = 'rounded'
-vim.o.pumblend = 10
+vim.o.winborder = 'single'
+vim.o.pumblend = 3
 vim.o.winblend = 0
 
 vim.o.cursorline = true
@@ -8,5 +8,13 @@ vim.o.cursorlineopt = 'number'
 -- diagnostics
 
 vim.diagnostic.config({
-  float = { border = 'rounded' },
+  float = { border = 'single' },
 })
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+  callback = function()
+    vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#7aa2f7", bg = "NONE" })
+  end,
+})
+
+vim.cmd("doautocmd ColorScheme")

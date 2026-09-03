@@ -2,10 +2,11 @@
 prepend_keymap = [
 { 
         on = ["g", "s"], 
-        run = "cd ~/School/s4", 
-        desc = "Go to Semester 4"
+        run = "cd ~/School/s5", 
+        desc = "Go to Semester 5"
     }
 ]
+
 append_keymap = [
 {
         on = ["A"],

@@ -41,13 +41,6 @@ vim.lsp.config.phpactor = {
     root_markers = { "composer.json" }
 }
 
--- jdtls
-
-vim.lsp.config.jdtls = {
-    cmd = { "jdtls" },
-    filetypes = {"java"}
-}
-
 -- ts-server
 
 vim.lsp.config.ts_server = {
@@ -76,4 +69,4 @@ vim.lsp.config.gopls = {
 
 -- ENABLE
 
-vim.lsp.enable({"lua_ls", "phpactor", "ts_server", "jdtls", "texlab", "gopls"})
+vim.lsp.enable({"lua_ls", "phpactor", "ts_server", "texlab", "gopls"})
