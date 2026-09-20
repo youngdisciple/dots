@@ -63,6 +63,14 @@ floating_modifier $mod normal
 # Output configuration #
 ########################
 
+exec_always {
+    swaymsg 'workspace 1; move workspace to output "Dell Inc. DELL P2419H HRTY1Y2"'
+    swaymsg 'workspace 2; move workspace to output "Dell Inc. DELL P2419H HRTY1Y2"'
+    swaymsg 'workspace 3; move workspace to output "Dell Inc. DELL P2419H HRTY1Y2"'
+    swaymsg 'workspace 4; move workspace to output "Dell Inc. DELL P2419H HRTY1Y2"'
+    swaymsg 'workspace 5; move workspace to output eDP-1'
+}
+
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /home/yd/Pictures/night.jpg fill
 
@@ -98,7 +106,7 @@ input type:pointer {
 
 input type:keyboard {
     xkb_layout "us, ara(mac)"
-        xkb_options "ctrl:swap_lalt_lctl, caps:swapescape, grp:shifts_toggle"
+        xkb_options "caps:swapescape, grp:shifts_toggle"
         repeat_delay 200
 }
 

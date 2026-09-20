@@ -9,3 +9,6 @@ KEYTIMEOUT=3
 
 source $ZSH/oh-my-zsh.sh
 export PATH="$HOME/.local/bin:$PATH"
+
+# zoxide test
+eval "$(zoxide init zsh)"
