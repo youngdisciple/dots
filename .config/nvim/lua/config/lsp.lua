@@ -1,3 +1,5 @@
+-- TODO: add individual file for each lsp
+
 -- CONFIG
 -- file watcher (important for sourcemap changes to be detected)
 vim.lsp.config("*", {
@@ -35,10 +37,16 @@ vim.lsp.config.lua_ls = {
 
 -- php
 
-vim.lsp.config.phpactor = {
-    cmd = { "phpactor", "language-server" },
+-- vim.lsp.config.phpactor = {
+--     cmd = { "phpactor", "language-server" },
+--     filetypes = { "php" },
+--     root_markers = { "composer.json" }
+-- }
+
+vim.lsp.config.intelephense = {
+    cmd = { "intelephense", "--stdio" },
     filetypes = { "php" },
-    root_markers = { "composer.json" }
+    root_markers = { "composer.json", ".git" }
 }
 
 -- ts-server
@@ -67,6 +75,13 @@ vim.lsp.config.gopls = {
     }
 }
 
+-- pyright
+vim.lsp.config.pyright = {
+    cmd = { "pyright-langserver", "--stdio" },
+    filetypes = {"python"},
+    root_markers = { "pyproject.toml", "setup.py", "setup.cfg", "requirements.txt", ".git" },
+}
+
 -- ENABLE
 
-vim.lsp.enable({"lua_ls", "phpactor", "ts_server", "texlab", "gopls"})
+vim.lsp.enable({"lua_ls", "intelephense", "ts_server", "texlab", "gopls", "pyright"}) -- phpactor
